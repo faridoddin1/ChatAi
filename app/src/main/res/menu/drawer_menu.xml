@@ -8,7 +8,6 @@
     </group>
     <group android:id="@+id/group_chats_history"
         android:checkableBehavior="single">
-        <!-- لیست چت‌های قبلی به صورت داینامیک اینجا اضافه می‌شود -->
     </group>
 </menu>
 
