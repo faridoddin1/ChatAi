@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp">
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bubble_ai"
+        android:padding="12dp"
+        android:textColor="#E0E0E0"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewCopy"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <ImageView
+        android:id="@+id/imageViewCopy"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="کپی کردن متن"
+        android:padding="6dp"
+        android:src="@drawable/ic_copy"
+        app:layout_constraintStart_toEndOf="@id/textViewMessage"
+        app:layout_constraintTop_toTopOf="@id/textViewMessage"
+        app:tint="#A0A0A0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

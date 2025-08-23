@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_new_chat">
+        <item
+            android:id="@+id/nav_new_chat"
+            android:icon="@drawable/ic_add_chat"
+            android:title="چت جدید" />
+    </group>
+    <group android:id="@+id/group_chats_history"
+        android:checkableBehavior="single">
+        <!-- لیست چت‌های قبلی به صورت داینامیک اینجا اضافه می‌شود -->
+    </group>
+</menu>
+

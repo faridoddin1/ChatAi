@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+
+    <color name="colorPrimaryLight">#B2EBF2</color>
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#727272</color>
+
+    <color name="text">#FFFFFF</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+
+    <color name="colorControlNormal">@color/textColorSecondary</color>
+    <color name="colorControlActivated">@color/colorAccent</color>
+    <color name="colorControlHighlight">@color/divider</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Night mode colors -->
+    <color name="colorPrimaryNight">#1A237E</color>
+    <color name="colorPrimaryDarkNight">#0D47A1</color>
+    <color name="colorAccentNight">#FF5252</color>
+
+    <color name="windowBackground">#C0C3C6</color>
+    <color name="lightBackground">#E0E0E0</color>
+    <color name="darkBackground">#424242</color>
+    <color name="drawerBackground">#FFfafafa</color>
+    <color name="rowBackground">#F2F2F2</color>
+
+
+
+    <color name="accent">#ffffff</color>
+    <color name="secondary_text">#CDDC39</color>
+
+    <color name="primary_night">#1E1E1E</color>
+    <color name="primary_dark_night">#121212</color>
+    <color name="primary_light_night">#3A3A3A</color>
+
+    <color name="night_primary">#EEEEEE</color>
+
+    <color name="primary">#6200EE</color>
+    <color name="primary_dark">#3700B3</color>
+    <color name="primary_light">#BB86FC</color>
+
+    <color name="dark_green">#022a1c</color>
+    <color name="dark_green_variant">#011a11</color>
+    <color name="accent_cyan">#00ffcc</color>
+    <color name="background">#1a1a1a</color>
+    <color name="primary_text">#e0e0e0</color>
+
+    <color name="white">#FFFFFFFF</color>
+
+
+</resources>
