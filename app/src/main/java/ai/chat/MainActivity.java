@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
         MessageAdapter.OnMessageInteractionListener {
 
     private static final String TAG = "MainActivity";
-    private static final String WORKER_URL = "https://xxxxxxxxxxxx.workers.dev/";
+    private static final String WORKER_URL = "https://chatai-worker.fa-ra9931143.workers.dev";
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     public static final int MESSAGE_TYPE_USER = 0;
     public static final int MESSAGE_TYPE_AI = 1;
