@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
@@ -247,9 +248,15 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void sendRequestToWorker(String prompt) {
+        JsonObject message = new JsonObject();
+        message.addProperty("role", "user");
+        message.addProperty("content", prompt);
+
+        JsonArray messages = new JsonArray();
+        messages.add(message);
+
         JsonObject payload = new JsonObject();
-        payload.addProperty("prompt", prompt);
-        payload.addProperty("task", "analyze");
+        payload.add("messages", messages);
 
         RequestBody body = RequestBody.create(payload.toString(), JSON);
         Request request = new Request.Builder().url(WORKER_URL).post(body).build();
@@ -280,29 +287,15 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void handleStreamingResponse(ResponseBody responseBody) {
-        StringBuilder fullResponse = new StringBuilder();
-        try (BufferedSource source = responseBody.source()) {
-            while (!source.exhausted()) {
-                String line = source.readUtf8Line();
-                if (line != null && line.startsWith("data: ")) {
-                    String jsonString = line.substring(6).trim();
-                    if ("[DONE]".equals(jsonString)) break;
-                    try {
-                        Map<String, String> data = gson.fromJson(jsonString, Map.class);
-                        if (data != null && data.containsKey("response")) {
-                            fullResponse.append(data.get("response"));
-                            updateAiMessage(fullResponse.toString(), false);
-                        }
-                    } catch (JsonSyntaxException e) {
-                        Log.w(TAG, "JSON parsing error: " + jsonString, e);
-                    }
-                }
-            }
-        } catch (IOException e) {
-            Log.e(TAG, "Error reading stream: ", e);
+        try {
+            String responseString = responseBody.string();
+            JsonObject jsonObject = gson.fromJson(responseString, JsonObject.class);
+            String aiResponse = jsonObject.get("response").getAsString();
+            updateAiMessage(aiResponse, true);
+        } catch (IOException | JsonSyntaxException e) {
+            Log.e(TAG, "Error parsing response: ", e);
             updateAiMessage("خطا در پردازش پاسخ.", true);
         }
-        updateAiMessage(fullResponse.toString(), true);
     }
 
     private void addTypingIndicator() {
